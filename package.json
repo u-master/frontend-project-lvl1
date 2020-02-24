@@ -1,0 +1,23 @@
+{
+  "name": "yzav-brain-games",
+  "version": "1.0.0",
+  "description": "Brain Games is CLI application",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/u-master/frontend-project-lvl1.git"
+  },
+  "keywords": [
+    "brain",
+    "games"
+  ],
+  "author": "Yuri Zavyalov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/u-master/frontend-project-lvl1/issues"
+  },
+  "homepage": "https://github.com/u-master/frontend-project-lvl1#readme"
+}
