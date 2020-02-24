@@ -1,5 +1,5 @@
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
+<a href="https://codeclimate.com/github/u-master/frontend-project-lvl1/maintainability"><img src="https://api.codeclimate.com/v1/badges/fc350fd15de10809c3f7/maintainability" /></a>
 &nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://codeclimate.com/github/codeclimate/codeclimate/test_coverage"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/test_coverage" /></a>
+<a href="https://codeclimate.com/github/u-master/frontend-project-lvl1/test_coverage"><img src="https://api.codeclimate.com/v1/badges/fc350fd15de10809c3f7/test_coverage" /></a>
 
 <h1>Brain games</h1>
