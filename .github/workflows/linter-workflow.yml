@@ -1,10 +1,13 @@
 name: linter
 
-on: [push]
+on: push
 
 jobs:
-  run-linter:
+  build:
+    
     runs-on: ubuntu-latest
+    
     steps:
     - name: Start inner project linter
-      run: make lint
+      run: |
+        make lint
