@@ -8,9 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Install npm packges
-        run: |
-          make install
+      - uses: actions/checkout@v2
       - name: Start inner project linter
         run: |
           make lint
