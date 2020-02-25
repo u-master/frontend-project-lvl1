@@ -6,6 +6,5 @@ jobs:
   run-linter:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
     - name: Start inner project linter
       run: make lint
