@@ -6,22 +6,31 @@
 <h1>Brain games</h1>
 <hr>
 <dl>
-  <dd>
-    <h2>Brain even</h2>
-  </dd>
   <dt>
+    <h2>Brain even</h2>
+  </dt>
+  <dd>
     <p>You must answer "yes" if current number is even, or "no" otherwise.</p>
     <p>You win if you correct answer three times!</p>
     <a href="https://asciinema.org/a/305039" target="_blank"><img src="https://asciinema.org/a/305039.svg" /></a>
     <hr>
-  </dt>
-  <dd>
-    <h2>Brain calc</h2>
   </dd>
   <dt>
+    <h2>Brain calc</h2>
+  </dt>
+  <dd>
     <p>Just calculate an expression and put the answer.</p>
     <p>You win if you correct answer three times!</p>
     <a href="https://asciinema.org/a/305387" target="_blank"><img src="https://asciinema.org/a/305387.svg" /></a>
     <hr>
+  </dd>
+  <dt>
+    <h2>Brain GCD</h2>
   </dt>
+  <dd>
+    <p>Find a greatest common divisor (GCD) of two numbers.</p>
+    <p>You win if you correct answer three times!</p>
+    <a href="https://asciinema.org/a/305596" target="_blank"><img src="https://asciinema.org/a/305596.svg" /></a>
+    <hr>
+  </dd>
 </dl>
