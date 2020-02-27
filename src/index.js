@@ -10,6 +10,16 @@ const DEFAULT_TASK_ITERATIONS = 3;
 // Generate random number and return it
 const guessNumber = (max = DEFAULT_MAX_GUESSED_NUM) => Math.ceil(Math.random() * max);
 
+// Find GDC of two numbers
+const calculateGdc = (num1, num2) => {
+  const [a, b] = (num1 < num2) ? [num2, num1] : [num1, num2];
+  const remains = a % b;
+  if (remains === 0 || b === 0) {
+    return b;
+  }
+  return calculateGdc(b, remains);
+};
+
 /* Game Engine functions */
 
 // Greeting and get user name
@@ -73,6 +83,7 @@ const play = ({
 
 export {
   guessNumber,
+  calculateGdc,
   play,
 };
 export default () => greeting();
