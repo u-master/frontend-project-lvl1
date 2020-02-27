@@ -7,5 +7,9 @@ start:
 publish:
 	npm publish --dry-run
 
+relink:
+	npm unlink --force
+	npm link
+
 lint:
 	npx eslint .
