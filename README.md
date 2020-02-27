@@ -13,5 +13,15 @@
     <p>You must answer "yes" if current number is even, or "no" otherwise.</p>
     <p>You win if you correct answer three times!</p>
     <a href="https://asciinema.org/a/305039" target="_blank"><img src="https://asciinema.org/a/305039.svg" /></a>
+    <hr>
+  </dt>
+  <dd>
+    <h2>Brain calc</h2>
+  </dd>
+  <dt>
+    <p>Just calculate an expression and put the answer.</p>
+    <p>You win if you correct answer three times!</p>
+    <a href="https://asciinema.org/a/305387" target="_blank"><img src="https://asciinema.org/a/305387.svg" /></a>
+    <hr>
   </dt>
 </dl>
