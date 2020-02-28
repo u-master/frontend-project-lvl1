@@ -1,6 +1,6 @@
 
 import {
-  guessNumber,
+  makeNumber,
   play,
 } from './index.js';
 
@@ -22,8 +22,8 @@ const OPERATIONS = [
 ];
 
 const generateTask = () => {
-  const [operand1, operand2] = [guessNumber(), guessNumber()];
-  const { operation, calculationFunction } = OPERATIONS[guessNumber(OPERATIONS.length) - 1];
+  const [operand1, operand2] = [makeNumber(), makeNumber()];
+  const { operation, calculationFunction } = OPERATIONS[makeNumber(OPERATIONS.length) - 1];
   return {
     question: `${operand1} ${operation} ${operand2}`,
     answer: calculationFunction(operand1, operand2),

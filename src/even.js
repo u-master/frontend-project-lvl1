@@ -1,6 +1,6 @@
 
 import {
-  guessNumber,
+  makeNumber,
   play,
 } from './index.js';
 
@@ -11,7 +11,7 @@ const ODD_ANSWER = 'no';
 
 const answerTask = (num) => ((num % 2 === 0) ? EVEN_ANSWER : ODD_ANSWER);
 const generateTask = () => {
-  const num = guessNumber();
+  const num = makeNumber();
   return {
     question: String(num),
     answer: answerTask(num),
