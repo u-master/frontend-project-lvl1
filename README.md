@@ -11,8 +11,10 @@
   </dt>
   <dd>
     <p>You must answer "yes" if current number is even, or "no" otherwise.</p>
-    <p>You win if you correct answer three times!</p>
-    <a href="https://asciinema.org/a/305039" target="_blank"><img src="https://asciinema.org/a/305039.svg" /></a>
+    <p>You win if you answer correct three times!</p>
+    <p> Install and execute like this:
+      <a href="https://asciinema.org/a/305039" target="_blank"><img src="https://asciinema.org/a/305039.svg" /></a>
+    </p>
     <hr>
   </dd>
   <dt>
@@ -20,8 +22,10 @@
   </dt>
   <dd>
     <p>Just calculate an expression and put the answer.</p>
-    <p>You win if you correct answer three times!</p>
-    <a href="https://asciinema.org/a/305387" target="_blank"><img src="https://asciinema.org/a/305387.svg" /></a>
+    <p>You win if you answer correct three times!</p>
+    <p> Install and execute like this:
+      <a href="https://asciinema.org/a/305387" target="_blank"><img src="https://asciinema.org/a/305387.svg" /></a>
+    </p>
     <hr>
   </dd>
   <dt>
@@ -29,8 +33,21 @@
   </dt>
   <dd>
     <p>Find a greatest common divisor (GCD) of two numbers.</p>
-    <p>You win if you correct answer three times!</p>
-    <a href="https://asciinema.org/a/305596" target="_blank"><img src="https://asciinema.org/a/305596.svg" /></a>
+    <p>You win if you answer correct three times!</p>
+    <p> Install and execute like this:
+      <a href="https://asciinema.org/a/305596" target="_blank"><img src="https://asciinema.org/a/305596.svg" /></a>
+    </p>
+    <hr>
+  </dd>
+  <dt>
+    <h2>Brain progression</h2>
+  </dt>
+  <dd>
+    <p>Sign a missing number in progression.</p>
+    <p>You win if you answer correct three times!</p>
+    <p> Install and execute like this:
+      <a href="https://asciinema.org/a/305780" target="_blank"><img src="https://asciinema.org/a/305780.svg" /></a>
+    </p>
     <hr>
   </dd>
 </dl>
