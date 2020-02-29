@@ -50,4 +50,14 @@
     </p>
     <hr>
   </dd>
+  <dt>
+    <h2>Brain prime</h2>
+  </dt>
+  <dd>
+    <p>Guess a prime number. You must answer "yes" if current number is prime, or "no" otherwise.</p>
+    <p>You win if you answer correct three times!</p>
+    <p> Install and execute like this:
+      <a href="https://asciinema.org/a/306018" target="_blank"><img src="https://asciinema.org/a/306018.svg" /></a>
+    </p>
+  </dd>
 </dl>
