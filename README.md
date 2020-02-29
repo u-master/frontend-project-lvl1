@@ -13,7 +13,7 @@
     <p>You must answer "yes" if current number is even, or "no" otherwise.</p>
     <p>You win if you answer correct three times!</p>
     <p> Install and execute like this:
-      <a href="https://asciinema.org/a/305039" target="_blank"><img src="https://asciinema.org/a/305039.svg" /></a>
+      <a href="https://asciinema.org/a/306029" target="_blank"><img src="https://asciinema.org/a/306029.svg" /></a>
     </p>
     <hr>
   </dd>
@@ -24,7 +24,7 @@
     <p>Just calculate an expression and put the answer.</p>
     <p>You win if you answer correct three times!</p>
     <p> Install and execute like this:
-      <a href="https://asciinema.org/a/305387" target="_blank"><img src="https://asciinema.org/a/305387.svg" /></a>
+      <a href="https://asciinema.org/a/306030" target="_blank"><img src="https://asciinema.org/a/306030.svg" /></a>
     </p>
     <hr>
   </dd>
@@ -35,7 +35,7 @@
     <p>Find a greatest common divisor (GCD) of two numbers.</p>
     <p>You win if you answer correct three times!</p>
     <p> Install and execute like this:
-      <a href="https://asciinema.org/a/305596" target="_blank"><img src="https://asciinema.org/a/305596.svg" /></a>
+      <a href="https://asciinema.org/a/306032" target="_blank"><img src="https://asciinema.org/a/306032.svg" /></a>
     </p>
     <hr>
   </dd>
@@ -46,7 +46,7 @@
     <p>Sign a missing number in progression.</p>
     <p>You win if you answer correct three times!</p>
     <p> Install and execute like this:
-      <a href="https://asciinema.org/a/305780" target="_blank"><img src="https://asciinema.org/a/305780.svg" /></a>
+      <a href="https://asciinema.org/a/306034" target="_blank"><img src="https://asciinema.org/a/306034.svg" /></a>
     </p>
     <hr>
   </dd>
@@ -57,7 +57,7 @@
     <p>Guess a prime number. You must answer "yes" if current number is prime, or "no" otherwise.</p>
     <p>You win if you answer correct three times!</p>
     <p> Install and execute like this:
-      <a href="https://asciinema.org/a/306018" target="_blank"><img src="https://asciinema.org/a/306018.svg" /></a>
+      <a href="https://asciinema.org/a/306038" target="_blank"><img src="https://asciinema.org/a/306038.svg" /></a>
     </p>
   </dd>
 </dl>
