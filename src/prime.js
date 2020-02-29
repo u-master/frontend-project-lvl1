@@ -9,7 +9,7 @@ const BRAIN_TASK = 'Answer "yes" if given number is prime. Otherwise answer "no"
 const PRIME_ANSWER = 'yes';
 const NOT_PRIME_ANSWER = 'no';
 const MAX_NUMBER = 3572;
-const FREQUENCY_PRIME = 3; // Less is more offen. 1 is always prime. 2 is 50%/50%. 3 is 33%/67%.
+const PROBABILITY_NOT_PRIME = 3; // 1 is always prime. 2 is 50%/50%. 3 is 33% prime/67% not. etc.
 const LIST_PRIME_NUMBER = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
   71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173,
   179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277,
@@ -42,7 +42,7 @@ const LIST_PRIME_NUMBER = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 4
   3529, 3533, 3539, 3541, 3547, 3557, 3559, 3571];
 
 // Accidentally solve to generate a random number or pick a prime number from array
-const isMakePrime = () => (makeNumber() % FREQUENCY_PRIME === 0);
+const isMakePrime = () => (makeNumber() % PROBABILITY_NOT_PRIME === 0);
 
 // Generate number for task.
 const generateNum = () => (isMakePrime()
