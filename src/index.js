@@ -9,7 +9,7 @@
  *                            answer,     - String with answer
  *                          }
  *   RETURN:
- *     true - if win, false - if lost.
+ *     true - if win, false - if loose.
  *
  */
 
@@ -29,37 +29,23 @@ const showAbout = () => {
     brain-prime`);
 };
 
-/* Game Engine functions */
-
-// Greeting and get user name
-const greeting = () => {
-  console.log('Welcome to the Brain Games!\n');
-  const name = readlineSync.question('May I have your name? ');
-  console.log(`Hello, ${name}!`);
-  return name;
-};
-
-// Interact with user: show guessed question and answer if correct or not
-const askQuestion = (question, correctAnswer) => {
-  console.log(`Question: ${question}`);
-  const answer = readlineSync.question('Your answer: ').trim().toLowerCase();
-
-  if (String(correctAnswer) === answer) {
-    console.log('Correct!');
-    return true;
-  }
-  console.log(`"${answer}" is wrong answer ;(. Correct answer was "${correctAnswer}".`);
-  return false;
-};
-
 // Play engine
 const play = (task, generateRound) => {
-  const userName = greeting();
+  console.log('Welcome to the Brain Games!\n');
+  const userName = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${userName}!`);
   console.log(task);
   let isWin = true;
   for (let i = 1; i <= defaultRoundsAmount && isWin; i += 1) {
     const round = generateRound();
-    isWin = askQuestion(round.question, round.answer);
+    console.log(`Question: ${round.question}`);
+    const answer = readlineSync.question('Your answer: ').trim().toLowerCase();
+    if (String(round.answer) === answer) {
+      console.log('Correct!');
+    } else {
+      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${round.answer}".`);
+      isWin = false;
+    }
   }
   if (isWin) {
     console.log(`Congratulations, ${userName}!`);
