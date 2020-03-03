@@ -1,16 +1,14 @@
 
-import {
-  makeNumber,
-  play,
-} from './index.js';
+import { play } from '../index.js';
+import { generateNumber } from '../utils.js';
 
-// Constants for "prime" task
-const BRAIN_TASK = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const PRIME_ANSWER = 'yes';
-const NOT_PRIME_ANSWER = 'no';
-const MAX_NUMBER = 3572;
-const PROBABILITY_NOT_PRIME = 3; // 1 is always prime. 2 is 50%/50%. 3 is 33% prime/67% not. etc.
-const LIST_PRIME_NUMBER = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
+// Constants for "prime" game
+const taskPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const answerPrime = 'yes';
+const answerNotPrime = 'no';
+const maxNumber = 3572;
+const probabilityNotPrime = 3; // 1 is always prime. 2 is 50%/50%. 3 is 33% prime/67% not. etc.
+const primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
   71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173,
   179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263, 269, 271, 277,
   281, 283, 293, 307, 311, 313, 317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397,
@@ -42,34 +40,28 @@ const LIST_PRIME_NUMBER = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 4
   3529, 3533, 3539, 3541, 3547, 3557, 3559, 3571];
 
 // Accidentally solve to generate a random number or pick a prime number from array
-const isMakePrime = () => (makeNumber() % PROBABILITY_NOT_PRIME === 0);
+const isMakePrime = () => (generateNumber(1, probabilityNotPrime) % probabilityNotPrime === 0);
 
 // Generate number for task.
-const generateNum = () => (isMakePrime()
-  ? LIST_PRIME_NUMBER[makeNumber(LIST_PRIME_NUMBER.length)]
-  : makeNumber(MAX_NUMBER));
+const generateNumRound = () => (isMakePrime()
+  ? primeNumbers[generateNumber(0, primeNumbers.length - 1)]
+  : generateNumber(1, maxNumber));
 
 // Is a prime number?
-const isPrime = (num) => LIST_PRIME_NUMBER.includes(num);
+const isPrime = (num) => primeNumbers.includes(num);
 
 // Find a task solution
-const answerTask = (num) => (isPrime(num) ? PRIME_ANSWER : NOT_PRIME_ANSWER);
+const getAnswer = (num) => (isPrime(num) ? answerPrime : answerNotPrime);
 
-const generateTask = () => {
-  const num = generateNum();
+const generateRound = () => {
+  const num = generateNumRound();
   return {
     question: String(num),
-    answer: answerTask(num),
+    answer: getAnswer(num),
   };
 };
 
 // Main function
-const prime = () => {
-  const primeObj = {
-    task: BRAIN_TASK,
-    taskFunction: generateTask,
-  };
-  return play(primeObj);
-};
+const prime = () => play(taskPrimeGame, generateRound);
 
 export default prime;

@@ -1,24 +1,24 @@
 
-import play from '../index.js';
+import { play } from '../index.js';
 import { generateNumber } from '../utils.js';
 
 // Constants for "even" game
 const taskEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 const answerEven = 'yes';
 const answerOdd = 'no';
-const defaultMaxNumber = 1000;
+const maxNumber = 1000;
 
 const isEven = (num) => (num % 2 === 0);
-const answerTask = (num) => (isEven(num) ? answerEven : answerOdd);
-const generateTask = () => {
-  const num = generateNumber(1, defaultMaxNumber);
+const getAnswer = (num) => (isEven(num) ? answerEven : answerOdd);
+const generateRound = () => {
+  const num = generateNumber(1, maxNumber);
   return {
     question: String(num),
-    answer: answerTask(num),
+    answer: getAnswer(num),
   };
 };
 
 // Main function
-const even = () => play(taskEvenGame, generateTask);
+const even = () => play(taskEvenGame, generateRound);
 
 export default even;

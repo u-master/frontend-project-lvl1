@@ -18,6 +18,16 @@ import readlineSync from 'readline-sync';
 /* Common constants */
 const defaultRoundsAmount = 3;
 
+const showAbout = () => {
+  console.log(`
+    Welcome to the Brain Games!
+    Type following commands to start game:
+    brain-even
+    brain-calc
+    brain-gcd
+    brain-progression
+    brain-prime`);
+};
 
 /* Game Engine functions */
 
@@ -27,19 +37,6 @@ const greeting = () => {
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   return name;
-};
-
-// Show task for user
-const showBrainTask = (task) => console.log(task);
-
-// Show task results
-const showBrainResults = (isWin, userName) => {
-  if (isWin) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
-  return isWin;
 };
 
 // Interact with user: show guessed question and answer if correct or not
@@ -55,25 +52,23 @@ const askQuestion = (question, correctAnswer) => {
   return false;
 };
 
-// Task loop
-const taskLoop = (taskFunc, iteration) => {
+// Play engine
+const play = (task, generateRound) => {
+  const userName = greeting();
+  console.log(task);
   let isWin = true;
-  for (let i = 1; i <= iteration && isWin; i += 1) {
-    const task = taskFunc();
-    isWin = askQuestion(task.question, task.answer);
+  for (let i = 1; i <= defaultRoundsAmount && isWin; i += 1) {
+    const round = generateRound();
+    isWin = askQuestion(round.question, round.answer);
+  }
+  if (isWin) {
+    console.log(`Congratulations, ${userName}!`);
+  } else {
+    console.log(`Let's try again, ${userName}!`);
   }
   return isWin;
 };
 
-// Play engine
-const play = (task, taskFunction) => {
-  if (typeof taskFunction !== 'function') {
-    return false;
-  }
-  const userName = greeting();
-  showBrainTask(task);
-  const isWin = taskLoop(taskFunction, defaultRoundsAmount);
-  return showBrainResults(isWin, userName);
-};
+export { play };
 
-export default play;
+export default showAbout;

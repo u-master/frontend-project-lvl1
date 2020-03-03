@@ -1,10 +1,10 @@
 
-import play from '../index.js';
+import { play } from '../index.js';
 import { generateNumber } from '../utils.js';
 
-// Constants for "calc" task
+// Constants for "calc" game
 const taskCalcGame = 'What is the result of the expression?';
-const defaultMaxNumber = 1000;
+const maxNumber = 1000;
 
 const OPERATIONS = [
   {
@@ -21,9 +21,9 @@ const OPERATIONS = [
   },
 ];
 
-const generateTask = () => {
-  const operand1 = generateNumber(1, defaultMaxNumber);
-  const operand2 = generateNumber(1, defaultMaxNumber);
+const generateRound = () => {
+  const operand1 = generateNumber(1, maxNumber);
+  const operand2 = generateNumber(1, maxNumber);
   const { operation, calculationFunction } = OPERATIONS[generateNumber(0, OPERATIONS.length - 1)];
   return {
     question: `${operand1} ${operation} ${operand2}`,
@@ -32,6 +32,6 @@ const generateTask = () => {
 };
 
 
-const calc = () => play(taskCalcGame, generateTask);
+const calc = () => play(taskCalcGame, generateRound);
 
 export default calc;
