@@ -52,7 +52,6 @@ const play = (task, generateRound) => {
   } else {
     console.log(`Let's try again, ${userName}!`);
   }
-  return isWin;
 };
 
 export { play };
