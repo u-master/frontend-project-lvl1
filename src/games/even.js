@@ -6,11 +6,12 @@ import { generateNumber } from '../utils.js';
 const taskEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 const answerEven = 'yes';
 const answerOdd = 'no';
+const defaultMaxNumber = 1000;
 
 const isEven = (num) => (num % 2 === 0);
 const answerTask = (num) => (isEven(num) ? answerEven : answerOdd);
 const generateTask = () => {
-  const num = generateNumber();
+  const num = generateNumber(1, defaultMaxNumber);
   return {
     question: String(num),
     answer: answerTask(num),
