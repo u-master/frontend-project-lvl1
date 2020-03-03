@@ -2,53 +2,22 @@
 /** Brain games engine and some tools
  *
  * play - main engine function
- *   GET: playObj = {
- *          task,         - String with task description
+ *   GET:   task,         - String with task description
  *          taskFunction, - Function generated question and answer, it must return taskObj
  *                          taskObj = {
  *                            question,   - String with question
  *                            answer,     - String with answer
  *                          }
- *          iterations,   - Not required. Amout iterations of tasks.
- *                          By default is equal const DEFAULT_TASK_ITERATIONS.
- *        }
  *   RETURN:
  *     true - if win, false - if lost.
- *
- *
- * makeNumber - generate a random number (from 1)
- *   GET: max   - Not required. Max random number.
- *                By default is equal const DEFAULT_MAX_RANDOM_NUM.
- *   RETURN:
- *     random generated number
- *
- *
- * calculateGcd - find greatest common divisor of two numbers
- *   GET: num1, num2  - two numbers
- *   RETURN: GCD of num1 and num2
  *
  */
 
 import readlineSync from 'readline-sync';
 
 /* Common constants */
-const DEFAULT_MAX_RANDOM_NUM = 1000;
-const DEFAULT_TASK_ITERATIONS = 3;
+const defaultRoundsAmount = 3;
 
-/* Common functions */
-
-// Generate random number and return it
-const makeNumber = (max = DEFAULT_MAX_RANDOM_NUM) => Math.ceil(Math.random() * max);
-
-// Find GDC of two numbers
-const calculateGcd = (num1, num2) => {
-  const [a, b] = (num1 < num2) ? [num2, num1] : [num1, num2];
-  const remains = a % b;
-  if (remains === 0 || b === 0) {
-    return b;
-  }
-  return calculateGcd(b, remains);
-};
 
 /* Game Engine functions */
 
@@ -97,23 +66,14 @@ const taskLoop = (taskFunc, iteration) => {
 };
 
 // Play engine
-const play = ({
-  task,
-  taskFunction,
-  iterations = DEFAULT_TASK_ITERATIONS,
-}) => {
+const play = (task, taskFunction) => {
   if (typeof taskFunction !== 'function') {
     return false;
   }
   const userName = greeting();
   showBrainTask(task);
-  const isWin = taskLoop(taskFunction, iterations);
+  const isWin = taskLoop(taskFunction, defaultRoundsAmount);
   return showBrainResults(isWin, userName);
 };
 
-export {
-  makeNumber,
-  calculateGcd,
-  play,
-};
-export default () => greeting();
+export default play;
