@@ -2,12 +2,12 @@
 /** Brain games engine and some tools
  *
  * play - main engine function
- *   GET:   task,         - String with task description
- *          taskFunction, - Function generated question and answer, it must return taskObj
- *                          taskObj = {
- *                            question,   - String with question
- *                            answer,     - String with answer
- *                          }
+ *   GET:   task,          - String with task description
+ *          generateRound, - Function generated question and answer, it must return
+ *                           round = {
+ *                             question,   - String with question
+ *                             answer,     - String with answer
+ *                           }
  *   RETURN:
  *     true - if win, false - if loose.
  *
