@@ -4,8 +4,6 @@ import { generateNumber } from '../utils.js';
 
 // Constants for "prime" game
 const taskPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const answerPrime = 'yes';
-const answerNotPrime = 'no';
 const maxNumber = 3572;
 const probabilityNotPrime = 3; // 1 is always prime. 2 is 50%/50%. 3 is 33% prime/67% not. etc.
 const primeNumbers = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
@@ -51,7 +49,7 @@ const generateNumRound = () => (isMakePrime()
 const isPrime = (num) => primeNumbers.includes(num);
 
 // Find a task solution
-const getAnswer = (num) => (isPrime(num) ? answerPrime : answerNotPrime);
+const getAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
 
 const generateRound = () => {
   const num = generateNumRound();
