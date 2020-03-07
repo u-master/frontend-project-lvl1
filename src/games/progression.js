@@ -1,6 +1,6 @@
 
-import { play } from '../index.js';
-import { generateNumber } from '../utils.js';
+import { play } from '../engine.js';
+import generateNumber from '../generateNumber.js';
 
 // Constants for "progression" task
 const taskPrimeGame = 'What number is missing in the progression?';

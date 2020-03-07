@@ -2,7 +2,7 @@
   "name": "yzav-brain-games",
   "version": "1.1.0",
   "description": "Brain Games is CLI application",
-  "main": "src/index.js",
+  "main": "src/engine.js",
   "type": "module",
   "scripts": {
     "test": "test"
