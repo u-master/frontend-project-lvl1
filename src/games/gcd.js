@@ -8,12 +8,11 @@ const maxNumber = 100;
 
 // Find GDC of two numbers
 const calculateGcd = (num1, num2) => {
-  const [a, b] = ((num1 < num2) ? [num2, num1] : [num1, num2]);
-  const remains = a % b;
-  if (remains === 0 || b === 0) {
-    return b;
+  const remains = num1 % num2;
+  if (remains === 0 || num2 === 0) {
+    return num2;
   }
-  return calculateGcd(b, remains);
+  return calculateGcd(num2, remains);
 };
 
 const generateRound = () => {
