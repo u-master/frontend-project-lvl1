@@ -35,8 +35,7 @@ const play = (task, generateRound) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(task);
-  let isWin = true;
-  for (let i = 1; i <= defaultRoundsAmount && isWin; i += 1) {
+  for (let i = 0; i < defaultRoundsAmount; i += 1) {
     const round = generateRound();
     console.log(`Question: ${round.question}`);
     const answer = readlineSync.question('Your answer: ').trim().toLowerCase();
@@ -44,14 +43,11 @@ const play = (task, generateRound) => {
       console.log('Correct!');
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${round.answer}".`);
-      isWin = false;
+      console.log(`Let's try again, ${userName}!`);
+      return;
     }
   }
-  if (isWin) {
-    console.log(`Congratulations, ${userName}!`);
-  } else {
-    console.log(`Let's try again, ${userName}!`);
-  }
+  console.log(`Congratulations, ${userName}!`);
 };
 
 export { play };
