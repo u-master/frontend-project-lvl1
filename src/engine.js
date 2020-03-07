@@ -39,7 +39,7 @@ const play = (task, generateRound) => {
     const round = generateRound();
     console.log(`Question: ${round.question}`);
     const answer = readlineSync.question('Your answer: ').trim().toLowerCase();
-    if (String(round.answer) === answer) {
+    if (round.answer === answer) {
       console.log('Correct!');
     } else {
       console.log(`"${answer}" is wrong answer ;(. Correct answer was "${round.answer}".`);
