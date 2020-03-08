@@ -2,24 +2,29 @@
 import { play } from '../engine.js';
 import generateNumber from '../generateNumber.js';
 
-const amountNumbersInProgression = 10;
+const makeProgressionString = (progression, position) => progression.map(
+  (e, i) => (i === position ? '..' : String(e)),
+).join(' ');
 
-const makeProgressionString = (start, step, space) => {
-  const resArr = [];
-  for (let i = 0, cur = start; i < amountNumbersInProgression; i += 1, cur += step) {
-    resArr.push((i === space) ? '..' : `${cur}`);
+const makeProgression = (start, step, length) => {
+  const progression = [];
+  let currentValue = start;
+  for (let i = 0; i < length; i += 1) {
+    progression.push(currentValue);
+    currentValue += step;
   }
-  return resArr.join(' ');
+  return progression;
 };
 
 const generateRound = () => {
-  const startNum = generateNumber(-1000, 1000);
-  const stepProgression = generateNumber(1, 20);
-  const guessAtPosition = generateNumber(0, amountNumbersInProgression - 1);
-
+  const start = generateNumber(-1000, 1000);
+  const step = generateNumber(1, 20);
+  const length = 10;
+  const progression = makeProgression(start, step, length);
+  const position = generateNumber(0, length - 1);
   return {
-    question: makeProgressionString(startNum, stepProgression, guessAtPosition),
-    answer: String(startNum + stepProgression * guessAtPosition),
+    question: makeProgressionString(progression, position),
+    answer: String(progression[position]),
   };
 };
 
