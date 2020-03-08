@@ -36,13 +36,13 @@ const play = (task, generateRound) => {
   console.log(`Hello, ${userName}!`);
   console.log(task);
   for (let i = 0; i < defaultRoundsAmount; i += 1) {
-    const round = generateRound();
-    console.log(`Question: ${round.question}`);
-    const answer = readlineSync.question('Your answer: ').trim().toLowerCase();
-    if (round.answer === answer) {
+    const { question, answer } = generateRound();
+    console.log(`Question: ${question}`);
+    const userAnswer = readlineSync.question('Your answer: ').trim().toLowerCase();
+    if (answer === userAnswer) {
       console.log('Correct!');
     } else {
-      console.log(`"${answer}" is wrong answer ;(. Correct answer was "${round.answer}".`);
+      console.log(`"${userAnswer}" is wrong answer ;(. Correct answer was "${answer}".`);
       console.log(`Let's try again, ${userName}!`);
       return;
     }
