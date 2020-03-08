@@ -2,17 +2,13 @@
 import { play } from '../engine.js';
 import generateNumber from '../generateNumber.js';
 
-// Constants for "prime" game
-const taskPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const maxNumber = 25;
-
 // Check if number is prime
 const isPrime = (num) => {
   if (num < 2) {
     return false;
   }
   const maxDivisor = Math.floor(num / 2);
-  for (let divisor = 2; divisor <= maxDivisor; divisor += 1) {
+  for (let divisor = 3; divisor <= maxDivisor; divisor += 2) {
     if (num % divisor === 0) {
       return false;
     }
@@ -24,7 +20,7 @@ const isPrime = (num) => {
 const getAnswer = (num) => (isPrime(num) ? 'yes' : 'no');
 
 const generateRound = () => {
-  const num = generateNumber(1, maxNumber);
+  const num = generateNumber(1, 25);
   return {
     question: String(num),
     answer: getAnswer(num),
@@ -32,6 +28,9 @@ const generateRound = () => {
 };
 
 // Main function
-const prime = () => play(taskPrimeGame, generateRound);
+const playPrime = () => play(
+  'Answer "yes" if given number is prime. Otherwise answer "no".',
+  generateRound,
+);
 
-export default prime;
+export default playPrime;

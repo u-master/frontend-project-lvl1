@@ -2,16 +2,12 @@
 import { play } from '../engine.js';
 import generateNumber from '../generateNumber.js';
 
-// Constants for "even" game
-const taskEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
-const maxNumber = 1000;
-
 // Check if number is even
 const isEven = (num) => (num % 2 === 0);
 
 const getAnswer = (num) => (isEven(num) ? 'yes' : 'no');
 const generateRound = () => {
-  const num = generateNumber(1, maxNumber);
+  const num = generateNumber(1, 1000);
   return {
     question: String(num),
     answer: getAnswer(num),
@@ -19,6 +15,9 @@ const generateRound = () => {
 };
 
 // Main function
-const even = () => play(taskEvenGame, generateRound);
+const playEven = () => play(
+  'Answer "yes" if the number is even, otherwise answer "no".',
+  generateRound,
+);
 
-export default even;
+export default playEven;

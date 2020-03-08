@@ -2,10 +2,6 @@
 import { play } from '../engine.js';
 import generateNumber from '../generateNumber.js';
 
-// Constants for "gdc" game
-const taskGCDGame = 'Find the greatest common divisor of given numbers.';
-const maxNumber = 100;
-
 // Find GDC of two numbers
 const calculateGcd = (num1, num2) => {
   const remains = num1 % num2;
@@ -16,6 +12,7 @@ const calculateGcd = (num1, num2) => {
 };
 
 const generateRound = () => {
+  const maxNumber = 100;
   const num1 = generateNumber(1, maxNumber);
   const num2 = generateNumber(1, maxNumber);
   return {
@@ -25,6 +22,9 @@ const generateRound = () => {
 };
 
 // Main function
-const gcd = () => play(taskGCDGame, generateRound);
+const playGcd = () => play(
+  'Find the greatest common divisor of given numbers.',
+  generateRound,
+);
 
-export default gcd;
+export default playGcd;

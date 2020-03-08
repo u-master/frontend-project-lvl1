@@ -2,12 +2,7 @@
 import { play } from '../engine.js';
 import generateNumber from '../generateNumber.js';
 
-// Constants for "progression" task
-const taskPrimeGame = 'What number is missing in the progression?';
 const amountNumbersInProgression = 10;
-const maxStepProgression = 20;
-const minStartNumber = -1000;
-const maxStartNumber = 1000;
 
 const makeProgressionString = (start, step, space) => {
   const resArr = [];
@@ -18,8 +13,8 @@ const makeProgressionString = (start, step, space) => {
 };
 
 const generateRound = () => {
-  const startNum = generateNumber(minStartNumber, maxStartNumber);
-  const stepProgression = generateNumber(1, maxStepProgression);
+  const startNum = generateNumber(-1000, 1000);
+  const stepProgression = generateNumber(1, 20);
   const guessAtPosition = generateNumber(0, amountNumbersInProgression - 1);
 
   return {
@@ -29,6 +24,9 @@ const generateRound = () => {
 };
 
 // Main function
-const progression = () => play(taskPrimeGame, generateRound);
+const playProgression = () => play(
+  'What number is missing in the progression?',
+  generateRound,
+);
 
-export default progression;
+export default playProgression;
