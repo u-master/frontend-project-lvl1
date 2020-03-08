@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-import main from '../src/index.js';
+import playGames from '../src/engine.js';
 
-main();
+playGames();
