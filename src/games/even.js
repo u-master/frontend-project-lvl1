@@ -6,6 +6,7 @@ import generateNumber from '../generateNumber.js';
 const isEven = (num) => (num % 2 === 0);
 
 const getAnswer = (num) => (isEven(num) ? 'yes' : 'no');
+
 const generateRound = () => {
   const num = generateNumber(1, 1000);
   return {

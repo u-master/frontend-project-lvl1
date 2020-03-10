@@ -18,9 +18,8 @@ const operations = [
 ];
 
 const generateRound = () => {
-  const maxNumber = 1000;
-  const operand1 = generateNumber(1, maxNumber);
-  const operand2 = generateNumber(1, maxNumber);
+  const operand1 = generateNumber(1, 1000);
+  const operand2 = generateNumber(1, 1000);
   const { operator, calculate } = operations[generateNumber(0, operations.length - 1)];
   return {
     question: `${operand1} ${operator} ${operand2}`,
