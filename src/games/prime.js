@@ -4,10 +4,10 @@ import generateNumber from '../generateNumber.js';
 
 // Check if number is prime
 const isPrime = (num) => {
-  if (num < 2) {
+  if (num < 2 || (num % 2 === 0 && num !== 2)) {
     return false;
   }
-  const maxDivisor = Math.floor(num / 2);
+  const maxDivisor = Math.floor(Math.sqrt(num));
   for (let divisor = 3; divisor <= maxDivisor; divisor += 2) {
     if (num % divisor === 0) {
       return false;
