@@ -1,5 +1,5 @@
 
-import { play } from '../engine.js';
+import play from '../engine.js';
 import generateNumber from '../generateNumber.js';
 
 // Find GDC of two numbers
