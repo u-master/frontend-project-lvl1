@@ -2,13 +2,15 @@
 import play from '../engine.js';
 import generateNumber from '../generateNumber.js';
 
+const progressionLength = 10;
+
 const getQuestion = (progression, indexHidden) => progression.map(
   (e, i) => (i === indexHidden ? '..' : String(e)),
 ).join(' ');
 
-const makeProgression = (start, step, length) => {
+const makeProgression = (start, step) => {
   const progression = [];
-  for (let i = 0; i < length; i += 1) {
+  for (let i = 0; i < progressionLength; i += 1) {
     progression.push(start + i * step);
   }
   return progression;
@@ -17,12 +19,11 @@ const makeProgression = (start, step, length) => {
 const generateRound = () => {
   const start = generateNumber(-1000, 1000);
   const step = generateNumber(1, 20);
-  const length = 10;
-  const progression = makeProgression(start, step, length);
-  const indexHidden = generateNumber(0, length - 1);
+  const progression = makeProgression(start, step);
+  const hiddenElementIndex = generateNumber(0, progressionLength - 1);
   return {
-    question: getQuestion(progression, indexHidden),
-    answer: String(progression[indexHidden]),
+    question: getQuestion(progression, hiddenElementIndex),
+    answer: String(progression[hiddenElementIndex]),
   };
 };
 
