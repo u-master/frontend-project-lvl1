@@ -15,7 +15,7 @@
 
 import readlineSync from 'readline-sync';
 
-const roundNumber = 3;
+const roundsNumber = 3;
 
 // Play engine
 const play = (description, generateRound) => {
@@ -23,7 +23,7 @@ const play = (description, generateRound) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
   console.log(description);
-  for (let i = 0; i < roundNumber; i += 1) {
+  for (let i = 0; i < roundsNumber; i += 1) {
     const { question, answer } = generateRound();
     console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ').trim().toLowerCase();
